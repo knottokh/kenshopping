@@ -59,4 +59,4 @@ gem 'spree-bank-transfer', github: 'knottokh/spree_banktransfer', require: 'spre
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 
-gem 'activestorage'
+#gem 'activestorage'
