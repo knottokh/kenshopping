@@ -8,17 +8,18 @@ gem 'rails', '5.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails', '~> 5.0.7'
 gem 'sass', '~> 3.6.0' # https://github.com/sass/ruby-sass/issues/94
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails'
+gem 'coffee-rails', ' ~> 4.2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '6.0.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -51,3 +52,7 @@ end
 gem 'spree', '~> 3.6.4'
 gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
+#gem 'spree-bank-transfer'
+gem 'spree-bank-transfer', github: 'knottokh/spree_banktransfer', require: 'spree_bank_transfer'
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'

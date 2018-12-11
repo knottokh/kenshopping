@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_074614) do
+ActiveRecord::Schema.define(version: 2018_12_11_040860) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -105,6 +105,17 @@ ActiveRecord::Schema.define(version: 2018_12_02_074614) do
     t.index ["position"], name: "index_spree_assets_on_position"
     t.index ["viewable_id"], name: "index_assets_on_viewable_id"
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
+  end
+
+  create_table "spree_banks", force: :cascade do |t|
+    t.string "name"
+    t.string "account_no"
+    t.boolean "active", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text "additional_details"
+    t.index ["active"], name: "index_spree_banks_on_active"
+    t.index ["name", "account_no"], name: "index_spree_banks_on_name_and_account_no", unique: true
   end
 
   create_table "spree_calculators", force: :cascade do |t|
@@ -359,10 +370,26 @@ ActiveRecord::Schema.define(version: 2018_12_02_074614) do
     t.string "number"
     t.string "cvv_response_code"
     t.string "cvv_response_message"
+    t.string "bank_name"
+    t.string "account_no"
+    t.string "transaction_reference_no"
+    t.date "deposited_on"
     t.index ["number"], name: "index_spree_payments_on_number", unique: true
     t.index ["order_id"], name: "index_spree_payments_on_order_id"
     t.index ["payment_method_id"], name: "index_spree_payments_on_payment_method_id"
     t.index ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type"
+  end
+
+  create_table "spree_paypal_express_checkouts", force: :cascade do |t|
+    t.string "token"
+    t.string "payer_id"
+    t.string "transaction_id"
+    t.string "state", default: "complete"
+    t.string "refund_transaction_id"
+    t.datetime "refunded_at"
+    t.string "refund_type"
+    t.datetime "created_at"
+    t.index ["transaction_id"], name: "index_spree_paypal_express_checkouts_on_transaction_id"
   end
 
   create_table "spree_preferences", force: :cascade do |t|
