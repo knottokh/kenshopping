@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/knottokh/spree_banktransfer.git
-  revision: d775ee24b44c213bb2713508e06dd0d8663422d1
+  revision: fd8e01eac3fc82355e890d65c79d69aab5e5d712
   specs:
     spree-bank-transfer (4.0.0)
       spree_core (~> 3.6.4)
@@ -404,7 +404,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-session_store
-  activestorage
   byebug
   coffee-rails (~> 4.2.2)
   jbuilder (~> 2.0)

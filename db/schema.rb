@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_165104) do
+ActiveRecord::Schema.define(version: 2018_12_12_185122) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -123,6 +123,10 @@ ActiveRecord::Schema.define(version: 2018_12_11_165104) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text "additional_details"
+    t.string "bank_attachment_file_name"
+    t.string "bank_attachment_content_type"
+    t.integer "bank_attachment_file_size"
+    t.datetime "bank_attachment_updated_at"
     t.index ["active"], name: "index_spree_banks_on_active"
     t.index ["name", "account_no"], name: "index_spree_banks_on_name_and_account_no", unique: true
   end
@@ -383,6 +387,10 @@ ActiveRecord::Schema.define(version: 2018_12_11_165104) do
     t.string "account_no"
     t.string "transaction_reference_no"
     t.date "deposited_on"
+    t.string "bank_attachment_file_name"
+    t.string "bank_attachment_content_type"
+    t.integer "bank_attachment_file_size"
+    t.datetime "bank_attachment_updated_at"
     t.index ["number"], name: "index_spree_payments_on_number", unique: true
     t.index ["order_id"], name: "index_spree_payments_on_order_id"
     t.index ["payment_method_id"], name: "index_spree_payments_on_payment_method_id"
