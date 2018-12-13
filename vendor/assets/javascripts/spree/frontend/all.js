@@ -14,3 +14,5 @@
 
 //= require spree/frontend/spree_bank_transfer
 //= require spree/frontend/spree_paypal_express
+//= require spree/frontend/spree_analytics_trackers
+//= require spree/frontend/spree_themes

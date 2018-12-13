@@ -59,4 +59,10 @@ gem 'spree-bank-transfer', github: 'knottokh/spree_banktransfer', require: 'spre
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 
+gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
+#bundle exec rails g spree_analytics_trackers:install
+gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: 'master'
+#gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-3-stable'
+gem 'sprockets-helpers'
+#bundle exec rails g vinsol_spree_themes:install
 #gem 'activestorage'
