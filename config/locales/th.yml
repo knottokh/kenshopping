@@ -1,0 +1,26 @@
+th:
+  activerecord:
+    attributes:
+      spree/order:
+        considered_risky: "ความปลอดภัย"
+  spree:
+    order_states:
+        complete: "เสร็จสิ้น"
+    returns: "คืนสินค้า"    
+    findmyorder: "ค้นหาคำสั่งซื้อ"
+    findmyordersearch: "กรอกรหัสสั่งซื้อ"
+    findmyemailsearch: กรอกอีเมลล์
+    payment_states:
+      balance_due: "รอตรวจสอบการชำระเงิน"
+      checkout: checkout
+      completed: "เสร็จสิ้น"
+      credit_owed: credit owed
+      failed: "ผิดพลาด"
+      paid: "ชำระแล้ว"
+      pending: "รอ"
+      processing: "กำลังดำเนินการ"
+      void: void
+    email: "อีเมลล์"  
+    isactive: "สถานะใช้งาน"  
+    isactive_yes: "ใช้งาน"
+    isactive_no: ไม่ใช้งาน

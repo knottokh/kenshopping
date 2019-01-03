@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_035612) do
+ActiveRecord::Schema.define(version: 2019_01_03_174400) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_035612) do
     t.boolean "states_required", default: false
     t.datetime "updated_at"
     t.boolean "zipcode_required", default: true
+    t.boolean "isactive", default: true
     t.index ["iso_name"], name: "index_spree_countries_on_iso_name", unique: true
     t.index ["name"], name: "index_spree_countries_on_name", unique: true
   end

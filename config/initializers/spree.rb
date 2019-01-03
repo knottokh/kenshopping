@@ -13,7 +13,7 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  config.allow_guest_checkout  = false
+  config.allow_guest_checkout  = true
 end
 
 Spree.user_class = "Spree::User"

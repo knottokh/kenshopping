@@ -20,6 +20,11 @@ gem 'coffee-rails', ' ~> 4.2.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '6.0.1'
+
+#bootstrap
+#gem 'popper_js', '~> 1.14.5'
+#gem 'bootstrap', '~> 4.2.1'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -56,13 +61,19 @@ gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
 #gem 'spree-bank-transfer'
 gem 'spree-bank-transfer', github: 'knottokh/spree_banktransfer', require: 'spree_bank_transfer'
+#bundle exec rails g spree_bank_transfer:install
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
+#bundle exec rails g spree_paypal_express:install
 
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
 #bundle exec rails g spree_analytics_trackers:install
-gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: 'master'
+gem 'vinsol_spree_themes', github: 'knottokh/spree_theme', branch: 'master'
 #gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-3-stable'
-gem 'sprockets-helpers'
 #bundle exec rails g vinsol_spree_themes:install
+gem 'sprockets-helpers'
+
 #gem 'activestorage'
+#email
+gem 'spree_mail_settings', github: 'knottokh/spree_mail_settings'
+gem 'spree_social_products', github: 'vinsol-spree-contrib/spree_social_products', branch: 'master'

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #namespace :spree do
+  #  get 'search_order/index'
+  #end
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to
   # Spree::ProductsController.
@@ -8,6 +11,10 @@ Rails.application.routes.draw do
   # We ask that you don't use the :as option here, as Spree relies on it being
   # the default of "spree".
   mount Spree::Core::Engine, at: '/'
+  Spree::Core::Engine.add_routes do
+    resources :search_order
+    #resources :mail_methods
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

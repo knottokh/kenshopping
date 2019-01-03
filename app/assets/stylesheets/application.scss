@@ -14,4 +14,15 @@
  *= require_tree .
  *= require_self
  */
+ .w-100{width:100%};
 .media-object{max-width:150px;}
+.navbar{margin-bottom:0px;}
+.search_area {
+    width: calc(100% - 650px);
+}
+.search_area.search_open{
+    width:300px;
+}
+.main_search_by_order_id{
+    min-height:350px;
+}
