@@ -24,3 +24,6 @@ th:
     isactive: "สถานะใช้งาน"  
     isactive_yes: "ใช้งาน"
     isactive_no: ไม่ใช้งาน
+    show_outofstock: แสดงเฉพาะสินค้าที่หมด
+    quick_search: ค้นหาแบบเร่งด่วน
+    stock: จำนวนสินค้า

@@ -3,6 +3,5 @@ Deface::Override.new(
   name: '_banktransfer overide',
   replace: "#howtobankwork",
   text: %q{
-    Transfer to 54854878 bangkok bank
   }
 )

@@ -1,5 +1,5 @@
 Deface::Override.new(
-  virtual_path: 'spree/shared/_error_messages',
+  virtual_path: 'spree/shared/_error_messages2',
   name: '_error_messages overide',
   replace: "#errorExplanation",
   text: %q{
