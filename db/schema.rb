@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_03_174400) do
+ActiveRecord::Schema.define(version: 2019_01_13_084059) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -71,10 +71,17 @@ ActiveRecord::Schema.define(version: 2019_01_03_174400) do
     t.integer "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "taxid"
+    t.integer "district_id"
+    t.integer "subdistrict_id"
+    t.string "district_name"
+    t.string "subdistrict_name"
     t.index ["country_id"], name: "index_spree_addresses_on_country_id"
+    t.index ["district_id"], name: "index_spree_addresses_on_district_id"
     t.index ["firstname"], name: "index_addresses_on_firstname"
     t.index ["lastname"], name: "index_addresses_on_lastname"
     t.index ["state_id"], name: "index_spree_addresses_on_state_id"
+    t.index ["subdistrict_id"], name: "index_spree_addresses_on_subdistrict_id"
   end
 
   create_table "spree_adjustments", force: :cascade do |t|
@@ -184,6 +191,16 @@ ActiveRecord::Schema.define(version: 2019_01_03_174400) do
     t.datetime "updated_at", null: false
     t.index ["number"], name: "index_spree_customer_returns_on_number", unique: true
     t.index ["stock_location_id"], name: "index_spree_customer_returns_on_stock_location_id"
+  end
+
+  create_table "spree_districts", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "state_id"
+    t.string "postcode"
+    t.index ["state_id"], name: "index_spree_districts_on_state_id"
   end
 
   create_table "spree_gateways", force: :cascade do |t|
@@ -410,6 +427,31 @@ ActiveRecord::Schema.define(version: 2019_01_03_174400) do
     t.index ["transaction_id"], name: "index_spree_paypal_express_checkouts_on_transaction_id"
   end
 
+  create_table "spree_permission_sets", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "description", default: ""
+    t.boolean "display_permission", default: false
+  end
+
+  create_table "spree_permissions", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "priority", default: 0
+    t.boolean "visible", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description", default: ""
+    t.index ["visible"], name: "index_spree_permissions_on_visible"
+  end
+
+  create_table "spree_permissions_permission_sets", force: :cascade do |t|
+    t.integer "permission_id"
+    t.integer "permission_set_id"
+    t.index ["permission_id"], name: "index_spree_permissions_permission_sets_on_permission_id"
+    t.index ["permission_set_id"], name: "index_spree_permissions_permission_sets_on_permission_set_id"
+  end
+
   create_table "spree_preferences", force: :cascade do |t|
     t.text "value"
     t.string "key"
@@ -473,6 +515,7 @@ ActiveRecord::Schema.define(version: 2019_01_03_174400) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on"
+    t.boolean "recommend", default: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
@@ -710,7 +753,26 @@ ActiveRecord::Schema.define(version: 2019_01_03_174400) do
 
   create_table "spree_roles", force: :cascade do |t|
     t.string "name"
+    t.boolean "editable", default: true
+    t.boolean "is_default", default: false
+    t.boolean "admin_accessible", default: false
+    t.index ["editable"], name: "index_spree_roles_on_editable"
+    t.index ["is_default"], name: "index_spree_roles_on_is_default"
     t.index ["name"], name: "index_spree_roles_on_name", unique: true
+  end
+
+  create_table "spree_roles_permission_sets", force: :cascade do |t|
+    t.integer "role_id"
+    t.integer "permission_set_id"
+    t.index ["permission_set_id"], name: "index_spree_roles_permission_sets_on_permission_set_id"
+    t.index ["role_id"], name: "index_spree_roles_permission_sets_on_role_id"
+  end
+
+  create_table "spree_roles_permissions", id: false, force: :cascade do |t|
+    t.integer "role_id", null: false
+    t.integer "permission_id", null: false
+    t.index ["permission_id"], name: "index_spree_roles_permissions_on_permission_id"
+    t.index ["role_id"], name: "index_spree_roles_permissions_on_role_id"
   end
 
   create_table "spree_shipments", force: :cascade do |t|
@@ -939,6 +1001,15 @@ ActiveRecord::Schema.define(version: 2019_01_03_174400) do
     t.index ["code"], name: "index_spree_stores_on_code", unique: true
     t.index ["default"], name: "index_spree_stores_on_default"
     t.index ["url"], name: "index_spree_stores_on_url"
+  end
+
+  create_table "spree_subdistricts", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "district_id"
+    t.index ["district_id"], name: "index_spree_subdistricts_on_district_id"
   end
 
   create_table "spree_taggings", force: :cascade do |t|

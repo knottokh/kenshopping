@@ -1,0 +1,18 @@
+<% content_for :page_title do %>
+  <%= plural_resource_name(Spree::Subdistrict) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_subdistrict), new_admin_district_subdistrict_url(@district), { class: "btn-success", icon: 'add', id: 'new_subdistrict_link' } %>
+<% end if can? :create, Spree::Subdistrict %>
+
+<div data-hook="district" class="form-group">
+  <%= label_tag :district, Spree.t(:district) %>
+  <select id="district" class='observe_field select2' data-base-url="<%=admin_subdistricts_path(format: :js) %>?district_id=" data-update="#subdistrict_list">
+    <%= options_from_collection_for_select(@districts, :id, :name, @district.id) %>
+  </select>
+</div>
+
+<div id="subdistrict_list" data-hook>
+  <%= render partial: 'subdistrict_list'%>
+</div>

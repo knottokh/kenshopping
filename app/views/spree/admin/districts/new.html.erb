@@ -1,0 +1,13 @@
+<%= render partial: 'spree/admin/shared/error_messages', locals: { target: @district } %>
+
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:districts), spree.admin_state_districts_url(@state) %> /
+  <%= Spree.t(:new_district) %>
+<% end %>
+
+<%= form_for [:admin, @state, @district] do |f| %>
+  <fieldset>
+    <%= render partial: 'form', locals: { f: f } %>
+    <%= render partial: 'spree/admin/shared/new_resource_links' %>
+  </fieldset>
+<% end %>

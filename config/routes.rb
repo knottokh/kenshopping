@@ -13,7 +13,20 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
   Spree::Core::Engine.add_routes do
     resources :search_order
+    get 'filter_units_by_postcode' => 'search_order#filter_units_by_postcode'
     #resources :mail_methods
+    namespace :admin do
+
+      resources :states do
+        resources :districts
+      end
+      resources :districts
+      
+      resources :districts do
+        resources :subdistricts
+      end
+      resources :subdistricts
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

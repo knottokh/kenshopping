@@ -14,6 +14,9 @@ Spree.config do |config|
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
   config.allow_guest_checkout  = true
+  config.always_include_confirm_step = false
+  #config.default_state_id = 3197
 end
 
 Spree.user_class = "Spree::User"
+#Spree::Config[:default_state_id]  = 3197

@@ -71,9 +71,18 @@ gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
 gem 'vinsol_spree_themes', github: 'knottokh/spree_theme', branch: 'master'
 #gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-3-stable'
 #bundle exec rails g vinsol_spree_themes:install
+
+gem 'spree_admin_roles_and_access', github: 'vinsol-spree-contrib/spree_admin_roles_and_access'
+#bundle
+#bundle exec rails g spree_admin_roles_and_access:install
+#bundle exec rake spree_roles:permissions:populate # To populate user and admin roles with their permissions
+#bundle exec rake spree_roles:permissions:populate_permission_sets # To set up some convenient permission sets.
 gem 'sprockets-helpers'
 
 #gem 'activestorage'
 #email
 gem 'spree_mail_settings', github: 'knottokh/spree_mail_settings'
 gem 'spree_social_products', github: 'vinsol-spree-contrib/spree_social_products', branch: 'master'
+
+gem "spree_best_sellers", github: 'knottokh/spree_best_sellers'
+#bundle exec rails g spree_best_sellers:install

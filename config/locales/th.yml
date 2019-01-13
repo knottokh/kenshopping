@@ -4,6 +4,10 @@ th:
       spree/order:
         considered_risky: "ความปลอดภัย"
   spree:
+    districts: อำเภอ
+    subdistricts: แขวง/ตำบล
+    postcodes: รหัสไปรษณีย์
+    tracking: ติดตามสินค้า
     order_states:
         complete: "เสร็จสิ้น"
     returns: "คืนสินค้า"    
@@ -27,3 +31,91 @@ th:
     show_outofstock: แสดงเฉพาะสินค้าที่หมด
     quick_search: ค้นหาแบบเร่งด่วน
     stock: จำนวนสินค้า
+    bank_attachment: ไฟล์แนบ
+    image_guide: รองรับไฟล์ .jpg, .jpeg, .gif or .png ขนาดไม่เกิน 5MB
+    selected_quantity_not_available: สินค้า %{item} มีไม่พอ กรุณาใส่จำนวนสินค้าที่ต้องการใหม่อีกครั้ง
+    cart_update: อัพเดทจำนวนสินค้า
+    taxid: เลขประจำตัวผู้เสียภาษี
+    total: รวม
+    order_mailer:
+      confirm_email:
+        dear_customer: ถึงคุณลูกค้า
+        thankhead: ขอขอบคุณลูกค้าสำหรับการสั่งซื้อสินค้าหมายเลข
+        linkcheck: ท่านสามารถตรวจสอบสถานะการชำระเงิน และการจัดส่งได้ที่ลิ้งค์ด้านล่างนี้  
+        thanks: ขอบคุณค่ะ
+        contactinfo: สอบถามเพิ่มเติมได้ที่ 02-222-2222 หรือไลน์ @Line1234
+    social:
+      bookmark_or_share_this: Bookmark or Share this
+      social_sharing_settings_description: Enable or disable sharing to these networks on product pages
+      social_sharing_settings_updated: Sharing settings have been successfully updated.
+      settings: Social Sharing Settings
+      service_settings: Service Settings
+      facebook_settings: Facebook Settings
+      buttons:
+        delicious: Delicious
+        submit_to_reddit: Submit to Reddit
+        share_on_tumblr: Share on Tumblr
+        tweet: Tweet
+      preferences:
+        service_button: '%{service} Button'
+        facebook_layout: Button Type
+        facebook_app_id: Facebook App ID
+        facebook_show_faces: Show Faces Facebook
+        facebook_verb_to_display: Verb to Display
+        facebook_color_scheme: Color Scheme
+        facebook_send_button: Share button
+        twitter_id: Twitter ID      
+    promotion_label: 'Promotion (%{name})'
+    promotion_rule: Promotion Rule    
+    promotion_rule_types:
+      country:
+        description: Order is shipped to proper (or default) country
+        name: Country
+      first_order:
+        description: Must be the customer's first order
+        name: First order
+      item_total:
+        description: Order total meets these criteria
+        name: Item total
+      one_use_per_user:
+        description: Only One Use Per User
+        name: One Use Per User
+      option_value:
+        description: Order includes specified product(s) with matching option value(s)
+        name: Option Value(s)
+      product:
+        description: Order includes specified product(s)
+        name: Product(s)
+      user:
+        description: Available only to the specified users
+        name: User
+      user_logged_in:
+        description: Available only to logged in users
+        name: User Logged In
+      taxon:
+        description: Order includes products with specified taxon(s)
+        name: Taxon(s)    
+    country_rule:
+      label: Choose must be shipped to this country    
+    promotion_action_types:
+      create_adjustment:
+        description: Creates a promotion credit adjustment on the order
+        name: Create whole-order adjustment
+      create_item_adjustments:
+        description: Creates a promotion credit adjustment on a line item
+        name: Create per-line-item adjustment
+      create_line_items:
+        description: Populates the cart with the specified quantity of variant
+        name: Create line items
+      free_shipping:
+        description: Makes all shipments for the order free
+        name: Free shipping  
+    best_sellers:
+      title: "สินค้ายอดนิยม"
+      settings:
+        title: "Best Sellers Configuration"
+        show_best_sellers: "Show Best Sellers in shop"
+        max_best_sellers: "Max number of Best Sellers"
+        show_best_sellers_sidebar: "Show Best Sellers in sidebar"        
+        min_order_create_date: "Min number of Order created date ago"
+    recommend: สินค้าแนะนำ

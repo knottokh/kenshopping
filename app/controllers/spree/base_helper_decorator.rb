@@ -14,3 +14,7 @@ Spree::BaseHelper.class_eval do
       end.sort_by { |c| c.name.parameterize }
     end
 end
+Spree::PermittedAttributes.class_eval do
+  class_variable_set(:@@address_attributes , class_variable_get(:@@address_attributes ).push(:taxid))
+  class_variable_set(:@@product_attributes , class_variable_get(:@@product_attributes ).push(:recommend))
+end

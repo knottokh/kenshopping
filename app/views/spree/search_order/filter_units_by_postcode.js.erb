@@ -1,0 +1,5 @@
+<% unless @filterd_district.nil? %>
+    $("#<%=@addr_type %>_address_attributes_country_id").val(<%= @filterd_district.state.country.id %>);
+    $("#<%=@addr_type %>_address_attributes_state_id").val(<%= @filterd_district.state.id %>);
+    $("#<%=@addr_type %>_address_attributes_city").val('<%= @filterd_district.name %>');
+<% end %>
