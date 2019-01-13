@@ -13,7 +13,7 @@ Deface::Override.new(
           <% end %>
         </strong>
         <%= raw(line_item.variant.options_text) -%>
-        <% unless  line_item.variant.sku.nil? %>
+        <% unless  line_item.variant.sku.nil? or line_item.variant.sku.empty? %>
             (<%= line_item.variant.sku %>)
         <% end %>
         

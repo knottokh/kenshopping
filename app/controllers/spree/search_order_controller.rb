@@ -5,6 +5,7 @@ class Spree::SearchOrderController < Spree::StoreController
         #number: params[:orderkeyword],email: params[:emailkeyword]
         'upper(number) = ? and lower(email) = ?', params[:orderkeyword].upcase,params[:emailkeyword].downcase
     ) if params[:orderkeyword].present? and params[:emailkeyword].present?
+    #Spree::OwnerMailer.payment_email(Spree::Order.find(15)).deliver_now
   end
   def show
   end

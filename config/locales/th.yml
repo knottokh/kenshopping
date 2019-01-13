@@ -44,6 +44,12 @@ th:
         linkcheck: ท่านสามารถตรวจสอบสถานะการชำระเงิน และการจัดส่งได้ที่ลิ้งค์ด้านล่างนี้  
         thanks: ขอบคุณค่ะ
         contactinfo: สอบถามเพิ่มเติมได้ที่ 02-222-2222 หรือไลน์ @Line1234
+      neworder_email:
+        subject: New Order available
+        comingorder: New Oder available
+      payment_email:
+        subject: Payment Order
+        customerpayment: Payment alreay  
     social:
       bookmark_or_share_this: Bookmark or Share this
       social_sharing_settings_description: Enable or disable sharing to these networks on product pages
@@ -119,3 +125,4 @@ th:
         show_best_sellers_sidebar: "Show Best Sellers in sidebar"        
         min_order_create_date: "Min number of Order created date ago"
     recommend: สินค้าแนะนำ
+      
