@@ -9,7 +9,7 @@ class CreateSpreeSubdistricts < ActiveRecord::Migration[5.2]
     #add_index :spree_postcodes, :country_id
     #add_column :spree_postcodes, :state_id, :integer
     #add_index :spree_postcodes, :state_id
-    add_column :spree_postcodes, :district_id, :integer
-    add_index :spree_postcodes, :district_id
+    #add_column :spree_postcodes, :district_id, :integer
+    #add_index :spree_postcodes, :district_id
   end
 end
