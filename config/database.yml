@@ -28,8 +28,8 @@ production:
   pool: 5
   timeout: 5000
   host: localhost
-  database: <%= ENV["DATABASE_NAME"] %>
-  username: <%= ENV["DATABASE_USER"] %>
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+  database: <%= ENV["APP_DATABASE_NAME"] %>
+  username: <%= ENV["APP_DATABASE_USER"] %>
+  password: <%= ENV["APP_DATABASE_PASSWORD"] %>
   
   
