@@ -77,6 +77,7 @@ gem 'spree_gateway', '~> 3.3'
 gem 'spree-bank-transfer', github: 'knottokh/spree_banktransfer', require: 'spree_bank_transfer'
 #bundle exec rails g spree_bank_transfer:install
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+#bundle exec rails g spree_i18n:install
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 #bundle exec rails g spree_paypal_express:install
 

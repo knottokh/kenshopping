@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
   def set_locale
-    session[:locale] = "th"
-    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
+    #session[:locale] = "th"
+    I18n.locale = params[:locale] || I18n.default_locale
   end
+  #def set_locale
+    #locale = params[:locale] || I18n.default_locale
+    #I18n.locale = Spree::Frontend::Config[:locale]
+  #end
 end

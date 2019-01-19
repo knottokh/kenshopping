@@ -17,6 +17,5 @@ Spree.config do |config|
   config.always_include_confirm_step = false
   #config.default_state_id = 3197
 end
-
 Spree.user_class = "Spree::User"
 #Spree::Config[:default_state_id]  = 3197
