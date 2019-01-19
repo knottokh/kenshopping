@@ -44,9 +44,11 @@ Deface::Override.new(
                           <p class="icon-reccommend">icon reccommend</p>
                       <% end %>
                       <% if @best_sellers.present? %>
-                          <% chk_sellerid = @best_sellers.select { |pt| pt.id == product.id } %>
+                          <% chk_sellerid = @best_sellers %>
                           <% unless chk_sellerid.empty? %>
-                            <p class="icon-base-sellers">icon base sellers</p>
+                            <% unless chk_sellerid.select { |pt| pt.id == product.id }.empty? %>
+                              <p class="icon-base-sellers">icon base sellers</p>
+                            <% end %> 
                           <% end %>  
                       <% end %>
                       <%= product_image(product, itemprop: "image", class: "img-responsive center-block") %>

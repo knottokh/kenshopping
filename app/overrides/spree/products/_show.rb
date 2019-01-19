@@ -6,9 +6,11 @@ Deface::Override.new(
       <% if @product.recommend %>
          <p class="icon-reccommend">icon reccommend</p>
      <% end %>
-     <% chk_sellerid = Spree::Product.best_sellers.select { |pt| pt.id == @product.id } %>
-        <% unless chk_sellerid.empty? %>
-        <p class="icon-base-sellers">icon base sellers</p>
+     <% chk_sellerid = Spree::Product.best_sellers %>
+    <% unless chk_sellerid.empty? %>
+         <% unless chk_sellerid.select { |pt| pt.id == @product.id }.empty? %>
+            <p class="icon-base-sellers">icon base sellers</p>
+         <% end %>    
     <% end %>
   }
 )
