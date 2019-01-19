@@ -1,5 +1,4 @@
 
-
 $(document).ready(function () {
   'use strict'
     $('[id$="address_attributes_zipcode"]').on('change', function () {

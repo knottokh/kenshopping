@@ -5,6 +5,5 @@ Deface::Override.new(
   text: %q{
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'applicationfront', 'data-turbolinks-track' => true %>
-
   }
 )
