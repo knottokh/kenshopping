@@ -62,3 +62,8 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis; }
+
+/*Home page css*/
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff image-url("ajax-loader.gif") center center no-repeat; }
