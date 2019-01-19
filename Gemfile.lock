@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/knottokh/spree_best_sellers.git
-  revision: 8291993e766c7aba62923cb51e579aa2926788b0
+  revision: c4789cb80e8af51e2331106b43b20750b38e4266
   specs:
     spree_best_sellers (3.0.0)
       spree_core (>= 3.6.4)
