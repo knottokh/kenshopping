@@ -7,7 +7,7 @@ Deface::Override.new(
          <p class="icon-reccommend">icon reccommend</p>
      <% end %>
      <% show_seller_check = (Spree::Product.best_sellers rescue nil) %>
-    <% unless show_seller_check.present? %>
+    <% if show_seller_check.present? %>
          <% unless show_seller_check.select { |pt| pt.id == @product.id }.empty? %>
             <p class="icon-base-sellers">icon base sellers</p>
          <% end %>    
