@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 2019_01_19_130410) do
     t.datetime "updated_at", null: false
     t.string "taxid"
     t.integer "district_id"
-    t.integer "subdistrict_id"
     t.string "district_name"
+    t.integer "subdistrict_id"
     t.string "subdistrict_name"
     t.index ["country_id"], name: "index_spree_addresses_on_country_id"
     t.index ["district_id"], name: "index_spree_addresses_on_district_id"
@@ -196,10 +196,10 @@ ActiveRecord::Schema.define(version: 2019_01_19_130410) do
   create_table "spree_districts", force: :cascade do |t|
     t.string "name"
     t.string "code"
+    t.string "postcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "state_id"
-    t.string "postcode"
     t.index ["state_id"], name: "index_spree_districts_on_state_id"
   end
 
