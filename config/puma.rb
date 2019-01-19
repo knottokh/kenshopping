@@ -12,8 +12,6 @@ threads threads_count, threads_count
 port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
-#
-#environment ENV.fetch("RAILS_ENV") { "production" }
 # Default to production
 rails_env = ENV['RAILS_ENV'] || "production"
 environment rails_env
