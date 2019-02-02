@@ -17,5 +17,5 @@
 /tmp
 
 # Ignore all storeage and public.
-/public
-/storage
+/public/*
+/storage/*
