@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/knottokh/spree_best_sellers.git
-  revision: 47b95c7538a1b0a567bf315a5cbcd6eda416af8c
+  revision: 7e09f4da5f0b745fc21a428502ba9fe0f853d3d3
   specs:
     spree_best_sellers (3.0.0)
       spree_core (>= 3.6.4)
@@ -393,7 +393,7 @@ GEM
       state_machines-activerecord (~> 0.5)
       stringex
       twitter_cldr (~> 4.3)
-    spree_extension (0.0.7)
+    spree_extension (0.0.9)
       activerecord (>= 4.2)
       spree_core
     spree_frontend (3.6.6)
