@@ -3,6 +3,9 @@ th:
     attributes:
       spree/order:
         considered_risky: "ความปลอดภัย"
+        state: สถานะ
+        payment_state: สถานะการชำระเงิน
+        shipment_state: สถานะการจัดส่ง
   spree:
     districts: อำเภอ
     subdistricts: แขวง/ตำบล
@@ -125,4 +128,7 @@ th:
         show_best_sellers_sidebar: "Show Best Sellers in sidebar"        
         min_order_create_date: "Min number of Order created date ago"
     recommend: สินค้าแนะนำ
+    backorderd: ชิ้น
+    ordersummary: แสดงผลรวม
+    confirm_payment: คุณยืนยันว่าต้องการ %{text}
       

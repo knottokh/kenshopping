@@ -16,7 +16,13 @@ Rails.application.routes.draw do
     get 'filter_units_by_postcode' => 'search_order#filter_units_by_postcode'
     #resources :mail_methods
     namespace :admin do
-
+      resources :orders do
+        #get '/:id/summary', to: 'orders#summary'
+        member do
+          get :summary
+        end
+      end
+      
       resources :states do
         resources :districts
       end

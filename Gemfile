@@ -32,7 +32,7 @@ gem 'coffee-rails', ' ~> 4.2.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '6.0.1'
-#gem 'jquery-validation-rails'
+gem 'jquery-validation-rails'
 
 
 #bootstrap
