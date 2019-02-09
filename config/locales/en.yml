@@ -2,3 +2,7 @@ en:
   spree:
     order_states:
         complete: "Complete"
+    notice_messages:
+      order_deleted: Order has been deleted
+      order_not_deleted: "Order could not be deleted. Reason: %{error}"
+    order_confirm_delete: Are you sure to delete order %{number}?  

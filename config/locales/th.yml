@@ -131,4 +131,8 @@ th:
     backorderd: ชิ้น
     ordersummary: แสดงผลรวม
     confirm_payment: คุณยืนยันว่าต้องการ %{text}
+    notice_messages:
+      order_deleted: ลบคำสั่งซื้อแล้ว
+      order_not_deleted: "ไม่สามารถลบคำสั่งซื้อได้. Reason: %{error}"
+    order_confirm_delete: คุณยืนยันว่าต้องการลบคำสั่งซื้อ %{number}?
       

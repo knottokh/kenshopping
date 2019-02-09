@@ -21,6 +21,8 @@ Rails.application.routes.draw do
         member do
           get :summary
         end
+        delete '/orders/:id', to: 'orders#destroy'
+
       end
       
       resources :states do

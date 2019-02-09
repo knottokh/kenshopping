@@ -44,6 +44,7 @@ Deface::Override.new(
         <td><%= order.display_total.to_html %></td>
         <td class='actions actions-1' data-hook="admin_orders_index_row_actions">
           <%= link_to_edit_url summary_admin_order_path(order), title: "admin_edit_#{dom_id(order)}", no_text: true if can?(:edit, order) %>
+          <%= link_to_delete_order order, no_text: true, class: 'delete' if can?(:delete, order) %>
         </td>
       </tr>
   }
