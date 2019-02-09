@@ -75,6 +75,11 @@ gem 'activerecord-session_store' #need install
 gem 'spree', '~> 3.6.4'
 gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
+
+gem 'vinsol_spree_themes', github: 'knottokh/spree_theme', branch: 'master'
+#gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-3-stable'
+#bundle exec rails g vinsol_spree_themes:install
+
 #gem 'spree-bank-transfer'
 gem 'spree-bank-transfer', github: 'knottokh/spree_banktransfer', require: 'spree_bank_transfer'
 #bundle exec rails g spree_bank_transfer:install
@@ -85,9 +90,6 @@ gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
 #bundle exec rails g spree_analytics_trackers:install
-gem 'vinsol_spree_themes', github: 'knottokh/spree_theme', branch: 'master'
-#gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-3-stable'
-#bundle exec rails g vinsol_spree_themes:install
 
 gem 'spree_admin_roles_and_access', github: 'vinsol-spree-contrib/spree_admin_roles_and_access'
 #bundle

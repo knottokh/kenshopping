@@ -1,0 +1,51 @@
+<% unless @order.payment_state == "paid" %>
+   <% if showheader = @order.payments.from_bank_transfer.first %>
+      <h4 class="small bank_transfer_payment_title"><%= Spree.t(:bank_attachment) %></h4>
+   <% end %>  
+<% end %>
+<div data-hook="bank_transfer_payment_display_images" >
+  <% if bank_transfer_payments = @order.payments.from_bank_transfer %>
+      <% count = 0 %>
+      <% bank_transfer_payments.each do |photo| %>
+        <% unless photo.bank_attachment_file_name.nil? %>
+          <% if count == 0 && @order.payment_state == "paid"%>
+            <h4 class="small"><%= Spree.t(:bank_attachment) %></h4>
+            <% count = 1 %>
+          <% end %>  
+          <div class="media-left">
+            <!-- Renders image -->
+            <%=link_to image_tag(photo.bank_attachment.url,class: 'media-object'), photo.bank_attachment.url(:original), :popup=>['original_image', 'height=700,width=900'] %>
+          </div>
+         <% end %>
+      <% end %>
+  <% end %>
+</div>
+<% unless @order.payment_state == "paid" %>
+  <% if bank_transfer_payment = @order.payments.from_bank_transfer.first %>
+    <%= form_for bank_transfer_payment, html: { class: "bt_payment_form" } do |f| %>
+      <div data-hook="bank_transfer_payment_upload_image" style="padding-bottom: 2px;">
+        <%= f.file_field :bank_attachment,:class => "form-control bank_transfer_payment_upload_image", onchange: "validateFiles(this);",data: { max_file_size: 5.megabytes } %>
+      </div>
+      <p class="image_guide">54878<%= Spree.t(:image_guide,imgsize: "5MB") %> </p>
+      <%= f.submit "Submit", :class => "btn btn-sm btn-default bt_payment_form_submit", confirm: Spree.t(:confirm_details_submit) ,data: { disable_with: false } %>
+    <% end %>
+    <% if (banks = Spree::Bank.active).any? %>
+      <div style="padding-top:20px">
+      <table data-hook="bank_transfer_payment_bank" border="1" align='center'>
+        <tr>
+          <th><%= Spree.t(:bank_name) %></th>
+          <th><%= Spree.t(:account_no) %></th>
+          <th><%= Spree.t(:additional_details) %></th>
+        </tr>
+        <% banks.each do |bank| %>
+          <tr>
+            <td><center><%= bank.name %></center></td>
+            <td><center><%= bank.account_no %></center></td>
+            <td><center><%= bank.additional_details.html_safe %></center></td>
+          </tr>
+        <% end %>
+      </table>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

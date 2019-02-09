@@ -35,7 +35,7 @@ th:
     quick_search: ค้นหาแบบเร่งด่วน
     stock: จำนวนสินค้า
     bank_attachment: ไฟล์แนบ
-    image_guide: รองรับไฟล์ .jpg, .jpeg, .gif or .png ขนาดไม่เกิน 5MB
+    image_guide: รองรับไฟล์ .jpg, .jpeg, .gif or .png ขนาดไม่เกิน %{imgsize}
     selected_quantity_not_available: สินค้า %{item} มีไม่พอ กรุณาใส่จำนวนสินค้าที่ต้องการใหม่อีกครั้ง
     cart_update: อัพเดทจำนวนสินค้า
     taxid: เลขประจำตัวผู้เสียภาษี
@@ -135,4 +135,5 @@ th:
       order_deleted: ลบคำสั่งซื้อแล้ว
       order_not_deleted: "ไม่สามารถลบคำสั่งซื้อได้. Reason: %{error}"
     order_confirm_delete: คุณยืนยันว่าต้องการลบคำสั่งซื้อ %{number}?
+    approve: อนุมัติ
       

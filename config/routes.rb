@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
   Spree::Core::Engine.add_routes do
     resources :search_order
+    get '/searchorder' => 'search_order#index'
     get 'filter_units_by_postcode' => 'search_order#filter_units_by_postcode'
     #resources :mail_methods
     namespace :admin do

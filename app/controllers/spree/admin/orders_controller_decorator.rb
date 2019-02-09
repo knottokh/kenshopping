@@ -12,9 +12,12 @@ Spree::Admin::OrdersController.class_eval do
     def destroy
         #@order = Spree::Order.find(params[:id])
         @order = Spree::Order.find_by!(number: params[:id])
+        bill_address_id = @order.bill_address_id
+        ship_address_id =  @order.ship_address_id
         begin
           # TODO: why is @product.destroy raising ActiveRecord::RecordNotDestroyed instead of failing with false result
           if @order.destroy
+            destroy_spree_address_related_order(bill_address_id,ship_address_id);
             flash[:success] = Spree.t('notice_messages.order_deleted')
           else
             flash[:error] = Spree.t('notice_messages.order_not_deleted', error: @order.errors.full_messages.to_sentence)
@@ -25,4 +28,31 @@ Spree::Admin::OrdersController.class_eval do
 
         redirect_to admin_orders_path
      end
+     private
+     
+     def destroy_spree_address_related_order(bill_address_id,ship_address_id)
+        begin
+          bill_address_users = Spree::User.find_by(bill_address_id: bill_address_id)
+          ship_address_users = Spree::User.find_by(ship_address_id: ship_address_id)
+          
+          if bill_address_users.nil? && ship_address_users.nil?
+            #delete bill_address_id
+            begin
+              baddress = Spree::Address.find(bill_address_id)
+              if !baddress.nil?
+                  baddress.destroy
+              end  
+            end
+            
+            #delete ship_address_id
+            begin
+              saddress = Spree::Address.find(ship_address_id)
+              if !saddress.nil?
+                  saddress.destroy
+              end 
+            end
+          end  
+        end    
+     end 
+     
 end

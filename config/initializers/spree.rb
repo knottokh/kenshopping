@@ -19,3 +19,6 @@ Spree.config do |config|
 end
 Spree.user_class = "Spree::User"
 #Spree::Config[:default_state_id]  = 3197
+if ENV['RAILS_ENV'] == "development"
+  ActionMailer::Base.default_url_options[:host]   = nil 
+end  

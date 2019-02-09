@@ -1,0 +1,25 @@
+<% if @order.available_payment_methods.any? { |pm| pm.type == 'Spree::PaymentMethod::BankTransfer' } %>
+  <div id="howtobankwork">
+     <p><%= link_to t(:how_bank_transfer_works), bank_transfer_instructions_path, id: 'banktransfer_instructions', target: "_blank" %></p>
+  </div>
+<% end %>
+
+<% if (banks = Spree::Bank.active).present? %>
+    <div id="viewallbank">
+      <table class="table index">
+        <tr>
+          <th><%= Spree.t(:bank_name) %></th>
+          <th><%= Spree.t(:account_no) %></th>
+          <th><%= Spree.t(:additional_details) %></th>
+        </tr>
+        <% banks.each do |bank| %>
+          <tr>
+            <td><%= bank.name %></td>
+            <td><%= bank.account_no %></td>
+            <td><%= bank.additional_details.html_safe %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+<% end %>
+
