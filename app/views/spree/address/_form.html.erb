@@ -52,7 +52,7 @@
       <% end %>
 
       <%== state_elements = [
-         form.collection_select(:state_id, address.country.states,
+         form.collection_select(:state_id, address.country.states.order("name desc"),
                             :id, :name,
                             {include_blank: true},
                             {class: have_states ? 'form-control' : 'form-control hidden',
