@@ -18,10 +18,19 @@ module Spree
       end
 
       def collection
+        orderby = "name"
+        if ENV['RAILS_ENV'] == "production"
+          orderby = 'name collate "C"'
+        end  
         super.order(name: :asc)
       end
 
       def load_data
+        orderby = "name"
+        if ENV['RAILS_ENV'] == "production"
+          orderby = 'name collate "C"'
+        end  
+        
         @states = Spree::State.order(name: :asc)
         #@state = Spree::State.all.first
       end
