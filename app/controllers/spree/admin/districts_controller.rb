@@ -22,7 +22,7 @@ module Spree
         if ENV['RAILS_ENV'] == "production"
           orderby = 'name collate "C"'
         end  
-        super.order(name: :asc)
+        super.order(orderby)
       end
 
       def load_data
@@ -31,7 +31,7 @@ module Spree
           orderby = 'name collate "C"'
         end  
         
-        @states = Spree::State.order(name: :asc)
+        @states = Spree::State.order(orderby)
         #@state = Spree::State.all.first
       end
     end
