@@ -18,11 +18,11 @@ module Spree
       end
 
       def collection
-        super.order(:name)
+        super.order(name: :asc)
       end
 
       def load_data
-        @states = Spree::State.order(:name)
+        @states = Spree::State.order(name: :asc)
         #@state = Spree::State.all.first
       end
     end

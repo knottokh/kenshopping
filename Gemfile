@@ -105,3 +105,5 @@ gem 'spree_social_products', github: 'vinsol-spree-contrib/spree_social_products
 
 gem "spree_best_sellers", github: 'knottokh/spree_best_sellers'
 #bundle exec rails g spree_best_sellers:install
+
+gem 'exception_handler', '~> 0.8.0.0'

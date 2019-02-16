@@ -20,13 +20,13 @@
       <% end %>
   <% end %>
 </div>
-<% unless @order.payment_state == "paid" %>
+<% unless @order.payment_state == "paid"  || @order.state == "canceled"%>
   <% if bank_transfer_payment = @order.payments.from_bank_transfer.first %>
     <%= form_for bank_transfer_payment, html: { class: "bt_payment_form" } do |f| %>
       <div data-hook="bank_transfer_payment_upload_image" style="padding-bottom: 2px;">
         <%= f.file_field :bank_attachment,:class => "form-control bank_transfer_payment_upload_image", onchange: "validateFiles(this);",data: { max_file_size: 5.megabytes } %>
       </div>
-      <p class="image_guide">54878<%= Spree.t(:image_guide,imgsize: "5MB") %> </p>
+      <p class="image_guide"><%= Spree.t(:image_guide,imgsize: "5MB") %> </p>
       <%= f.submit "Submit", :class => "btn btn-sm btn-default bt_payment_form_submit", confirm: Spree.t(:confirm_details_submit) ,data: { disable_with: false } %>
     <% end %>
     <% if (banks = Spree::Bank.active).any? %>

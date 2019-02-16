@@ -136,4 +136,10 @@ th:
       order_not_deleted: "ไม่สามารถลบคำสั่งซื้อได้. Reason: %{error}"
     order_confirm_delete: คุณยืนยันว่าต้องการลบคำสั่งซื้อ %{number}?
     approve: อนุมัติ
+    order_payment_updated: คำสั่งซื้อ %{text} แล้ว
+    shipment_states:
+      canceled: ยกเลิก
+    order_states:
+      canceled: ยกเลิก  
+
       
